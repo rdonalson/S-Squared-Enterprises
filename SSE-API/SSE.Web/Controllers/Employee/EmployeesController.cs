@@ -9,11 +9,11 @@ namespace SSE.Web.Controllers.Employee
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class EmployeeController : ControllerBase
+	public class EmployeesController : ControllerBase
 	{
 		private readonly IEmployeeRepository _employeeRepository;
 
-		public EmployeeController(SSEContext context)
+		public EmployeesController(SSEContext context)
 		{
 			_employeeRepository = new EmployeeRepository(context);
 		}
