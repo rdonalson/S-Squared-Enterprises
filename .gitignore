@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/bin
+/obj
+/SSE-API/.vs/SSE-API
+/SSE-API/SSE.Data/bin/Debug/net7.0
+/SSE-API/SSE.Data/obj
+/SSE-API/SSE.Infrastructure/bin/Debug/net7.0
+/SSE-API/SSE.Infrastructure/obj
+/SSE-API/SSE.Web/bin/Debug/net7.0
+/SSE-API/SSE.Web/obj
