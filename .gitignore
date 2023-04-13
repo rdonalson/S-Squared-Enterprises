@@ -10,3 +10,7 @@
 /SSE-API/SSE.Web/bin/Debug/net7.0
 /SSE-API/SSE.Web/obj
 
+/SSE-API/.vs/ProjectEvaluation
+/SSE-API/SSE.Data/bin/Debug/netcoreapp3.1
+/SSE-API/SSE.Infrastructure/bin/Debug/netcoreapp3.1
+/SSE-API/SSE.Web/bin/Debug/netcoreapp3.1
