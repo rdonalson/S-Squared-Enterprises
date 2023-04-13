@@ -23,7 +23,7 @@ namespace SSE.Web
 			// Setting up Swagger
 			services.AddSwaggerGen(s =>
 			{
-				s.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "FPFL-API", Version = "v1" });
+				s.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "SSE-API", Version = "v1" });
 			});
 
 
@@ -54,7 +54,7 @@ namespace SSE.Web
 				app.UseSwagger();
 				app.UseSwaggerUI(c =>
 				{
-					c.SwaggerEndpoint("/swagger/v1/swagger.json", "FPFL-API");
+					c.SwaggerEndpoint("/swagger/v1/swagger.json", "SSE-API");
 				});
 
 				app.UseDeveloperExceptionPage();
