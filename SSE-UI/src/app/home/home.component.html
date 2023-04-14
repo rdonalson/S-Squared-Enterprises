@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">{{pageTitle}}</a>
+    <ul class="navbar-nav mr-auto">
+    </ul>
+  </div>
+  <div class="card flex justify-content-center">
+    <span class="p-float-label">
+      <p-dropdown [options]="items" [(ngModel)]="selectedEmp" placeholder="Select a Manager" [editable]="true"
+        optionLabel="name" inputId="float-label" (onChange)="filterEmployees($event)"></p-dropdown>
+      <label for="float-label">Select a Manager</label>
+    </span>
+  </div>
+</nav>
+<div class="card">
+  <div class="card-body">
+    <div class="content-section implementation flex">
+      <div id="employeelist" class="card left-card">
+        <p-table [columns]="cols" [value]="filteredEmployees" [tableStyle]="{ 'min-width': '50rem' }">
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th *ngFor="let col of columns">
+                {{ col.header }}
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+              <td *ngFor="let col of columns">
+                {{ rowData[col.field] }}
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+</div>
