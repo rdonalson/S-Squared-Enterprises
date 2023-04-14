@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { ButtonModule } from 'primeng/button';
-import { DropdownModule } from 'primeng/dropdown';
 import { IPrincipality } from '../shared/models/principality';
 import { PrincipalityService } from '../shared/services/employee.service';
 
@@ -14,6 +12,7 @@ export class EmployeeComponent implements OnInit{
   pageTitle: string = 'Add New Employee';
   errorMessage!: string;
   itemForm!: FormGroup;
+  selectedRole!: any;
   principalities: IPrincipality[] = [];
 
   constructor(

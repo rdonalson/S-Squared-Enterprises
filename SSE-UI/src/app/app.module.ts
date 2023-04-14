@@ -8,6 +8,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
+import { ListboxModule } from 'primeng/listbox';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +30,8 @@ import { EmployeeComponent } from './employee/employee.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    DropdownModule,
+    ListboxModule,
     ButtonModule,
     TableModule,
     DragDropModule,
