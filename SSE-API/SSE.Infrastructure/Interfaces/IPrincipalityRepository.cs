@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace SSE.Infrastructure.Interfaces
 {
-	public interface IEmployeeRepository
+	public interface IPrincipalityRepository
 	{
-		Task<List<Employee>> GetEmployees();
+		Task<List<Principality>> GetPrincipalities();
 	}
 }

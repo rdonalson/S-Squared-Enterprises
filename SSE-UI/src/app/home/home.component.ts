@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../shared/services/home.service';
 import { IEmployee } from '../shared/models/employee';
-import { Item } from '../shared/models/item';
+import { IItem } from '../shared/models/item';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   filteredEmployees!: IEmployee[];
 
   cols: any[] = [];
-  items: Item[] = [];
+  items: IItem[] = [];
 
   constructor(private _homeService: HomeService) {}
 
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
     const code: number = +event.value.code;
     if (code > 0) {
       this.filteredEmployees = this.employees.filter(
-        (e) => e.manager === event.value.code
+        (e) => e.managerId === event.value.code
       );
     } else {
       this.filteredEmployees = this.employees;
@@ -50,10 +50,10 @@ export class HomeComponent implements OnInit {
   }
 
   private createDropdownItems(): void {
-    var item: Item = { name: 'All', code: 0 };
+    var item: IItem = { name: 'All', code: 0 };
     this.items.push(item);
     this.employees.forEach((employee: IEmployee) => {
-      var item: Item = { name: employee.last, code: employee.id };
+      var item: IItem = { name: employee.last, code: employee.id };
       this.items.push(item);
     });
   }

@@ -1,0 +1,52 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <!-- Page Title -->
+    <a class="navbar-brand">{{ pageTitle }}</a>
+    <span class="vertical-separator">&nbsp;</span>
+  </div>
+</nav>
+<div class="card">
+  <div class="card-body">
+    <div class="card-container">
+      <!-- Item Reactive Form -->
+      <form novalidate (ngSubmit)="saveItem()" [formGroup]="itemForm">
+        <div class="p-fluid">
+          <!-- Manager -->
+          <div class="field grid">
+            <label for="principalityId" class="col-12 mb-2 md:col-2 md:mb-0">Manager</label>
+            <p-dropdown id="principalityId"
+              formControlName="principality"
+              placeholder="Select a Manager"
+              optionLabel="name"
+              optionValue="id"
+              [options]="principalities"
+              (onChange)="getPrincipality($event)">
+            </p-dropdown>
+          </div>
+          <!-- Common fields -->
+          <!-- Name -->
+          <div class="field grid">
+            <label for="nameId" class="col-12 mb-2 md:col-2 md:mb-0">First Name</label>
+            <div class="col-12 md:col-10" tooltipPosition="left" >
+              <input pInputText id="nameId" type="text" class="p-inputtext" placeholder="Enter an Item Name"
+                formControlName="Name" [ngClass]="{ 'is-invalid': 'ng-invalid ng-dirty' }" />
+            </div>
+          </div>
+          <!-- Amount -->
+
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="field grid">
+          <div class="col-5 md:col-4 top-spacer">
+            <button pButton type="button" class="vertical-button-spacer" style="width: 80px"
+              type="submit">Save</button>
+            <button pButton type="button" class="
+                  p-button-secondary p-button-outlined
+                  vertical-button-spacer
+                " style="width: 80px" [routerLink]="['/home']">Cancel</button>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

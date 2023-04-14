@@ -13,6 +13,7 @@ namespace SSE.Data.Context
 		public DbSet<Employee> Employees { get; set; }
 		public DbSet<Role> Roles { get; set; }
 		public DbSet<EmployeeRole> EmployeeRoles { get; set; }
+		public DbSet<Principality> Principalities { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -28,6 +29,12 @@ namespace SSE.Data.Context
 
 			modelBuilder.Entity<EmployeeRole>()
 				.HasKey(er => er.Id);
+
+			modelBuilder.Entity<Employee>()
+				.HasOne(e => e.Principality)
+				.WithMany(p => p.Employees)
+				.HasForeignKey(e => e.PrincipalityId)
+				.IsRequired(false);
 		}
 	}
 }
